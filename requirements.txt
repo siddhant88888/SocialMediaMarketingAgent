@@ -1,0 +1,12 @@
+openai
+python-dotenv
+opencv-python
+numpy
+Pillow
+google-api-python-client
+fastapi
+pydantic
+langchain-core
+langchain-community
+langchain-openai
+uvicorn

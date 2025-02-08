@@ -50,10 +50,10 @@ import shutil
 # Existing endpoints...
 
 @app.post("/analyze_media_and_gen_caption")
-async def analyze_media(file: UploadFile = File(...), is_video: bool = Form(False), interval: int = Form(30), llm_type: str = Form("gpt-4o"), api_key: str = None):
+async def analyze_media(file: UploadFile = File(...), is_video: bool = Form(False), interval: int = Form(30), llm_type: str = Form("gpt-4o"), api_key: str = None, groq_api_key: str = None):
     client = openai.OpenAI(
         base_url="https://api.groq.com/openai/v1",
-        api_key=os.environ.get("GROQ_API_KEY"),
+        api_key= groq_api_key
     )   
 
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
